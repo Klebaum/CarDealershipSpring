@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8" />
+<title>Gestão de Carros</title>
+
+</head>
+<body>
+	<div class="container my-2">
+		<h2>Gestão de Carros</h2>
+		<form action="#" th:action="${carro.id == null} ? @{/carros/salvar} : @{/carros/editar}" th:object="${carro}" method="POST">
+			<input type="hidden" id="id" th:field="*{id}">
+			
+			<span th:if="${#fields.hasErrors('loja.id')}" th:errors="*{loja.id}" class="text-danger"></span>
+			<input type="text" th:field="*{loja.id}" placeholder="Id Loja" class="form-control mb-4 col-4">
+			
+      		<span th:if="${#fields.hasErrors('placa')}" th:errors="*{placa}" class="text-danger"></span>
+			<input type="text" th:field="*{placa}" placeholder="Placa" class="form-control mb-4 col-4">
+      		
+      		<span th:if="${#fields.hasErrors('modelo')}" th:errors="*{modelo}" class="text-danger"></span>
+			<input type="text" th:field="*{modelo}" placeholder="Modelo" class="form-control mb-4 col-4">
+			
+			<span th:if="${#fields.hasErrors('chassi')}" th:errors="*{chassi}" class="text-danger"></span>
+			<input type="text" th:field="*{chassi}" placeholder="chassi" class="form-control mb-4 col-4">
+			
+			<span th:if="${#fields.hasErrors('ano')}" th:errors="*{ano}" class="text-danger"></span>
+			<input type="text" th:field="*{ano}" placeholder="ano" class="form-control mb-4 col-4">
+			
+			<span th:if="${#fields.hasErrors('quilometragem')}" th:errors="*{quilometragem}" class="text-danger"></span>
+			<input type="text" th:field="*{quilometragem}" placeholder="quilometragem" class="form-control mb-4 col-4">
+			
+			<span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="text-danger"></span>
+			<input type="text" th:field="*{descricao}" placeholder="descricao" class="form-control mb-4 col-4">
+			
+			<span th:if="${#fields.hasErrors('valor')}" th:errors="*{valor}" class="text-danger"></span>
+			<input type="text" th:field="*{valor}" placeholder="valor" class="form-control mb-4 col-4">
+			
+			<span th:if="${#fields.hasErrors('fotos')}" th:errors="*{fotos}" class="text-danger"></span>
+			<input type="text" th:field="*{fotos}" placeholder="fotos" class="form-control mb-4 col-4">
+			
+			<button type="submit" class="btn btn-info col-2">Salvar</button>
+		</form>
+		<hr>
+		<a th:href="@{/carros/listar}">Retornar para a lista de carros</a>
+	</div>
+</body>
+</html>

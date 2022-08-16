@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Menu do Sistema</title>
+    </head>
+    <body>
+        <h1>Página da Loja</h1>
+        <p>Olá ${sessionScope.usuarioLogado.email}</p>
+        <ul>
+            <li>
+            	<a th:href="@{/carros/cadastrar}">Adicione Novo Carro</a>
+            	<a th:href="@{/carros/listar}">Lista de Carros</a>
+                <a href="${pageContext.request.contextPath}/logout.jsp">Sair</a>
+            </li>
+        </ul>
+    </body>
+</html>

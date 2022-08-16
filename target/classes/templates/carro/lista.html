@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8" />
+<title>Listar Veiculo</title>
+
+</head>
+<body>
+	<div class="container my-2" align="center">
+		<h1>Carros</h1>
+		<table border="1" class="table table-striped table-responsive-md">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th th:text="#{carro.loja.nome}"></th>
+					<th th:text="#{carro.placa}"></th>
+					<th th:text="#{carro.modelo}"></th>
+					<th th:text="#{carro.chassi}"></th>
+					<th th:text="#{carro.ano}"></th>
+					<th th:text="#{carro.quilometragem}"></th>
+					<th th:text="#{carro.descricao}"></th>
+					<th th:text="#{carro.valor}"></th>
+					<th th:text="#{carro.fotos}"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="carro : ${carros}">
+					<td th:text="${carro.id}"></td>
+					<td th:text="${carro.loja.nome}"></td>
+					<td th:text="${carro.placa}"></td>
+					<td th:text="${carro.modelo}"></td>
+					<td th:text="${carro.chassi}"></td>
+					<td th:text="${carro.ano}"></td>
+					<td th:text="${carro.quilometragem}"></td>
+					<td th:text="${carro.descricao}"></td>
+					<td th:text="${carro.valor}"></td>
+					<td th:text="${carro.fotos}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
